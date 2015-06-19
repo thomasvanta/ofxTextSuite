@@ -51,7 +51,7 @@ void ofxTextBlock::setText(string _inputText){
 
 void ofxTextBlock::draw(float x, float y){
 
-    drawLeft(x, y);
+    drawLeft((int)x, (int)y);
 
 }
 
@@ -80,7 +80,7 @@ void ofxTextBlock::drawLeft(float x, float y){
                 //glTranslatef(drawX, drawY, 0.0f);
                 glScalef(scale, scale, scale);
 
-                defaultFont.drawString(words[currentWordID].rawWord.c_str(), drawX, drawY);
+                defaultFont.drawString(words[currentWordID].rawWord.c_str(), (int)drawX, (int)drawY);
                 currX += words[currentWordID].width;
 
                 glPopMatrix();
@@ -131,7 +131,7 @@ void ofxTextBlock::drawCenter(float x, float y){
 
                 glScalef(scale, scale, scale);
 
-                defaultFont.drawString(words[currentWordID].rawWord.c_str(), drawX, drawY);
+                defaultFont.drawString(words[currentWordID].rawWord.c_str(), (int)drawX, (int)drawY);
                 currX += words[currentWordID].width;
 
                 glPopMatrix();
@@ -187,7 +187,7 @@ void ofxTextBlock::drawJustified(float x, float y, float boxWidth){
                 glScalef(scale, scale, scale);
 
                 if (words[currentWordID].rawWord != " ") {
-                    defaultFont.drawString(words[currentWordID].rawWord.c_str(), drawX, drawY);
+                    defaultFont.drawString(words[currentWordID].rawWord.c_str(), (int)drawX, (int)drawY);
                     currX += words[currentWordID].width;
                 }
                 else {
@@ -234,7 +234,7 @@ void ofxTextBlock::drawRight(float x, float y){
                 glTranslatef(x, y, 0.0f);
                 glScalef(scale, scale, scale);
 
-                defaultFont.drawString(words[currentWordID].rawWord.c_str(), drawX, drawY);
+                defaultFont.drawString(words[currentWordID].rawWord.c_str(), (int)drawX, (int)drawY);
                 currX += words[currentWordID].width;
 
                 glPopMatrix();
